@@ -2,11 +2,14 @@ const password = document.querySelector('#senha');
 
 const msg = document.querySelector('#mensagem');
 
+const confirmPassword = document.querySelector('#confirmarsenha');
+
 password.addEventListener('input', function(tx) {
     const texto = tx.target.value;
 
     if (texto.length < 4) {
         console.log("Senha Fraca");
+        msg.classList.remove("vermelho")
         msg.classList.remove("verde");
         msg.classList.remove("amarelo");
         msg.classList.add("vermelho");
@@ -21,3 +24,11 @@ password.addEventListener('input', function(tx) {
         console.log("Senha Forte");
     }
 })
+
+confirmPassword.addEventListener('input', function() {
+    if (password.value !== confirmPassword.value) {
+      confirmPassword.setCustomValidity('As senhas devem ser iguais.');
+    } else {
+      confirmPassword.setCustomValidity(''); // Limpa o erro se estiverem iguais
+    }
+  });
