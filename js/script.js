@@ -87,3 +87,12 @@ form.addEventListener('submit', (event) => {
     result.replaceChildren(usernameLine, passwordLine);
     result.hidden = false;
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const botaoCriarConta = document.getElementById('btVerificar');
+
+    botaoCriarConta.addEventListener('click', (event) => {
+        event.preventDefault(); // Evita o comportamento padrão do botão
+        window.location.href = 'login.html'; // Redireciona para a página de login
+    });
+});
