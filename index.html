@@ -1,21 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js" defer></script>
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
-    <section>
-        <form action="" method="post">
-            <div id="mensagem">Mensagem</div>
-            <input type="text" name="nomeusuario" placeholder="Usuário" id="nomeusuario" minlength="3">
-            <input type="password" name="senha" placeholder="Senha" id="senha">
-            <input type="password" name="confirmarsenha" placeholder="Confirmar Senha" id="confirmarsenha">
-            <input type="button" id="btVerificar" value="Login">
-        </form>
-    </section>
+    <main>
+        <section class="login-card" aria-labelledby="titulo">
+            <h1 id="titulo">Acesse sua conta</h1>
+            <p class="subtitulo">Preencha os campos para continuar.</p>
+            <form id="formularioLogin" novalidate>
+                <label for="nomeusuario">Usuário</label>
+                <input type="text" name="nomeusuario" placeholder="Digite seu usuário" id="nomeusuario" minlength="3" autocomplete="username" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" placeholder="Digite sua senha" id="senha" autocomplete="new-password" required>
+                <div id="forcaSenha" class="forca-senha" aria-live="polite"></div>
+
+                <label for="confirmarsenha">Confirmar senha</label>
+                <input type="password" name="confirmarsenha" placeholder="Digite a senha novamente" id="confirmarsenha" autocomplete="new-password" required>
+
+                <div id="mensagem" class="mensagem" role="status" aria-live="polite"></div>
+                <button type="submit" id="btVerificar">Entrar</button>
+                <div id="resultado" class="resultado" aria-live="polite" hidden></div>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
